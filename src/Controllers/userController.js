@@ -35,18 +35,7 @@ const getUser = async (req, res) => {
   }
 };
 
-const testUser = (req, res) => {
-  try {
-    res.status(200).json("workingggg");
-  } catch (error) {
-    res.status(500).json({
-      message: "errrorr",
-    });
-  }
-};
-
 module.exports = {
   createUser,
   getUser,
-  testUser,
 };

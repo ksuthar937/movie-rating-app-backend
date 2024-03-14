@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
 const userRoute = require("./src/Routes/authRoute");
+const moviesRoute = require("./src/Routes/moviesRoute");
 
 const app = express();
 
@@ -15,6 +16,8 @@ app.use(express.json());
 dotenv.config();
 
 app.use("/api/users", userRoute);
+
+app.use("/api/movies", moviesRoute);
 
 const PORT = process.env.PORT;
 
