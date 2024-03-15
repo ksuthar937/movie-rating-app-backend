@@ -1,17 +1,20 @@
-## Movie Rating Application (Backend)
+# Movie Rating Application (Backend)
 
--RESTful API for a movie rating application where users can browse movies, rate them, and write reviews.
+RESTful API for a movie rating application where users can browse movies, rate them, and write reviews.
 
-# Tech Stack:
+## Tech Stack:
 
 Backend Framework: Node.js with Express.js
+
 Database: MongoDB
+
 Authentication: JWT (JSON Web Tokens) for user authentication
+
 Other Libraries: cors, bcrypt, jsonwebtoken, dotenv, colors, nodemon
 
 ## Features and Endpoints:
 
-# User Authentication
+## User Authentication
 
 Register:
 POST /api/users/register - Registers a new user with username, email, and password.
@@ -19,7 +22,7 @@ POST /api/users/register - Registers a new user with username, email, and passwo
 Login:
 POST /api/users/login - Authenticates a user and returns a JWT token.
 
-# Movies
+## Movies
 
 Add Movie:
 POST /api/movies - Allows users to add a new movie. Requires details such as title, director, genre, releaseYear, and description.
@@ -36,7 +39,7 @@ GET /api/movies/:id - Retrieves details of a specific movie.
 List Movies:
 GET /api/movies - Lists all movies. Supports filtering by genre, releaseYear, or director through query parameters.
 
-# Ratings and Reviews
+## Ratings and Reviews
 
 Rate and Review Movie:
 POST /api/movies/:id/reviews - Allows authenticated users to post a rating and review for a movie, including rating and text.
