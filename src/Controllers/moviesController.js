@@ -3,7 +3,9 @@ const movieService = require("../Services/movieService");
 const createMovie = async (req, res) => {
   try {
     const movieData = req.body;
+
     const movie = await movieService.createMovie(movieData);
+
     res.status(201).json({
       movie,
     });
@@ -71,16 +73,12 @@ const getAllMovies = async (req, res) => {
     const director = req.query.director ? req.query.director : "";
     const releaseYear = req.query.releaseYear ? req.query.releaseYear : "";
 
-    console.log("genre", genre);
-    console.log("releaseYear", releaseYear);
-    console.log("director", director);
-
     const movies = await movieService.getAllMovies(
       genre,
       director,
       releaseYear
     );
-
+    
     res.status(200).json({
       success: true,
       length: movies.length,

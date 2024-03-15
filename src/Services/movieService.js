@@ -51,11 +51,9 @@ const getAllMovies = async (genre, director, releaseYear) => {
     if (releaseYear) query.releaseYear = releaseYear;
 
     const movies = await moviesModel.find(query);
-
     if (movies.length === 0) {
       throw new Error("No Movies");
     }
-
     return movies;
   } catch (error) {
     throw error;
