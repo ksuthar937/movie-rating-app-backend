@@ -1,6 +1,6 @@
-# Blogging Platform Application (Full Stack)
+# Movie Rating Application (Backend)
 
-Develop a basic blogging platform that supports user authentication, CRUD operations for blog posts, commenting features, and a responsive front-end design. The platform will integrate a backend using Node.js and Express.js, with MongoDB as the database. The frontend will be developed with React.
+RESTful API for a movie rating application where users can browse movies, rate them, and write reviews.
 
 ## Tech Stack:
 
@@ -22,29 +22,39 @@ POST /api/users/register - Registers a new user with username, email, and passwo
 Login:
 POST /api/users/login - Authenticates a user and returns a JWT token.
 
-## Blogs
+## Movies
 
-Add Blog:
-POST /api/blogs - Allows users to add a new Blog. Requires details such as title, description, imageURL.
+Add Movie:
+POST /api/movies - Allows users to add a new movie. Requires details such as title, director, genre, releaseYear, and description.
 
-Update Blog:
-PUT /api/blogs/:id - Enables users to update an existing blog's details by its ID.
+Update Movie:
+PUT /api/movies/:id - Enables users to update an existing movie's details by its ID.
 
-Delete Blog:
-DELETE /api/blogs/:id - Permits users to delete a blog by its ID.
+Delete Movie:
+DELETE /api/movies/:id - Permits users to delete a movie by its ID.
 
-Get Blog Details:
-GET /api/blogs/:id - Retrieves details of a specific blog.
+Get Movie Details:
+GET /api/movies/:id - Retrieves details of a specific movie.
 
-List Blogs:
-GET /api/blogs - Lists all blogs.
+List Movies:
+GET /api/movies - Lists all movies. Supports filtering by genre, releaseYear, or director through query parameters.
 
-## Comments on Blogs
+## Ratings and Reviews
 
-Add Comment : 
-POST /api/blogs/:id/comments - Allow users to add comments to posts.
+Rate and Review Movie:
+POST /api/movies/:id/reviews - Allows authenticated users to post a rating and review for a movie, including rating and text.
 
-Get Comments :
-GET /api/blogs/:id/comments - Show comments under each blog post.
+Update Review:
+PUT /api/movies/:movieId/reviews/:reviewId - Enables users to update their review and rating for a specific movie.
+
+Delete Review:
+DELETE /api/movies/:movieId/reviews/:reviewId - Allows users to delete their own review.
+
+List Reviews:
+GET /api/movies/:id/reviews - Retrieves all reviews for a particular movie.
+
+Movie Average Rating:
+GET /api/movies/:id/averageRating - Calculates and returns the average rating for a movie.
+
 
 
